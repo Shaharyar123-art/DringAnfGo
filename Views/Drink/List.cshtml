@@ -1,0 +1,32 @@
+﻿@using DringsAndGo.ViewModels
+@model DrinkListViewModel
+
+<div>
+    <h4> All the Drinks are shown here </h4>
+</div>
+<h2>@Model.CurrentCategory</h2>
+@{
+    foreach (var drink in Model.Drinks)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src=@drink.ImageThumbnailUrl alt="" />
+                <div class="caption">
+                    <h3 class="pull-right">
+                        @drink.Price.ToString("c")
+
+                    </h3>
+
+                    <h3>
+                        <a>@drink.Name</a>
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+        </div>
+      
+    }
+}
